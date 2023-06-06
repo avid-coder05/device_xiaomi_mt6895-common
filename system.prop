@@ -37,6 +37,7 @@ persist.log.tag.gralloc4=S
 
 # Media
 media.stagefright.thumbnail.prefer_hw_codecs=true
+vendor.mtk_thumbnail_optimization=true
 
 # USB
 ro.sys.usb.bicr=no
@@ -61,3 +62,34 @@ wifi.tethering.interface=ap0
 # RIL
 vendor.rild.libargs=-d /dev/ttyC0
 vendor.rild.libpath=mtk-ril.so
+
+#Other Stuff
+ro.opengls.version=196610
+ro.mtk_perf_simple_start_win=1
+ro.mtk_perf_fast_start_win=1
+ro.mtk_perf_response_time=1
+ro.postinstall.fstab.prefix=/system
+net.bt.name=Android
+dalvik.vm.image-dex2oat-Xms=64m
+dalvik.vm.image-dex2oat-Xmx=64m
+dalvik.vm.dex2oat-Xms=64m
+dalvik.vm.dex2oat-Xmx=512m
+dalvik.vm.usejit=true
+dalvik.vm.usejitprofiles=true
+dalvik.vm.dexopt.secondary=true
+dalvik.vm.appimageformat=lz4
+ro.dalvik.vm.native.bridge=0
+dalvik.vm.dex2oat-resolve-startup-strings=true
+dalvik.vm.dex2oat-max-image-block-size=524288
+dalvik.vm.minidebuginfo=true
+dalvik.vm.dex2oat-minidebuginfo=true
+dalvik.vm.madvise.vdexfile.size=104857600
+dalvik.vm.madvise.odexfile.size=104857600
+dalvik.vm.madvise.artfile.size=4294967295
+ro.config.per_app_memcg=false
+ro.mediatek.version.branch=alps-mp-t0.mssi1.tc8sp1
+ro.mediatek.version.release=alps-mp-t0.mp1.tc8sp1-V1
+ro.mediatek.version.build.branch=
+ro.vendor.mtk_omacp_support=1
+ro.vendor.mtk_flv_playback_support=1
+ro.vendor.have_aee_feature=1

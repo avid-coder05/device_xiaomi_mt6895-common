@@ -86,6 +86,27 @@ BOARD_DTB_OFFSET := 0x07c88000
 BOARD_VENDOR_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_VENDOR_BASE := 0x3fff8000
 
+BOARD_KERNEL_CMDLINE := stack_depot_disable=on kstacktrace=off
+BOARD_KERNEL_CMDLINE += cgroup_disable=pressure
+BOARD_KERNEL_CMDLINE += cgroup.memory=nokmem
+BOARD_KERNEL_CMDLINE += console=tty0
+BOARD_KERNEL_CMDLINE += 8250.nr_uarts=4
+BOARD_KERNEL_CMDLINE += rcupdate.rcu_expedited=1
+#BOARD_KERNEL_CMDLINE += transparent_hugepage=never
+BOARD_KERNEL_CMDLINE += vmalloc=400M
+BOARD_KERNEL_CMDLINE += swiotlb=noforce pelt=8
+BOARD_KERNEL_CMDLINE += loop.max_part=7
+BOARD_KERNEL_CMDLINE += panel-l16-42-02-0a-dsc-vdo.WpAndMaxlum=0x7f,0x76,0x3f
+BOARD_KERNEL_CMDLINE += mediatek_drm.panel_opt=0x53,0x42,0x32,0x01,0x4c,0x16,0x32,0x65
+BOARD_KERNEL_CMDLINE += arm64.nopauthntk_printk_ctrl.disable_uart=1
+BOARD_KERNEL_CMDLINE += log_buf_len=2M
+BOARD_KERNEL_CMDLINE += ramoops.mem_address=0x48090000
+BOARD_KERNEL_CMDLINE += ramoops.mem_size=0xe0000 ramoops.pmsg_size=0x10000 ramoops.console_size=0x40000
+BOARD_KERNEL_CMDLINE += usb2jtag_mode=0
+BOARD_KERNEL_CMDLINE += hwid.level=MP hwid.version=3.29.0
+BOARD_KERNEL_CMDLINE += aee_aed_pureason=reboot panic_on_taint=20
+BOARD_KERNEL_CMDLINE += arm64.nomte bootconfig
+
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --vendor_cmdline $(BOARD_VENDOR_CMDLINE)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_PAGE_SIZE) --board ""
@@ -150,6 +171,7 @@ TARGET_BOARD_PLATFORM := mt6895
 # Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.mt6895
